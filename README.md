@@ -33,8 +33,6 @@ Steps to Run:
 File Structure:
 Ensure the `resources` folder (for images, audio) is correctly placed:
 
-src/
-
   mainPacket/
   
   GUI/
