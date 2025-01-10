@@ -49,9 +49,9 @@ A retro-inspired 2D space shooter game built in Java. Players navigate through l
 Ensure the `resources` folder (for images, audio) is correctly placed:
 
 ```
-mainPacket/
-GUI/
-laserGun/
+    mainPacket/
+          GUI/
+    laserGun/
 soundPacket/
 resources/
   images/
