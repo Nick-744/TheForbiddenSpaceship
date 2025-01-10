@@ -44,5 +44,4 @@ A retro-inspired 2D space shooter game built in Java. Players navigate through l
   ```
 
 #### 3. On Windows (Simplified):
-- Simply run the provided `run_game.bat` file by double-clicking it. This batch script automates the compilation, resource copying, and execution steps.
-- 
+- Simply run the provided `run_game-Windows.bat` file by double-clicking it. This batch script automates the compilation, resource copying, and execution steps.
