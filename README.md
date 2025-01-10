@@ -32,13 +32,21 @@ Steps to Run:
 
 File Structure:
 Ensure the `resources` folder (for images, audio) is correctly placed:
+
 src/
 
   mainPacket/
+  
   GUI/
+  
   laserGun/
+  
   soundPacket/
+  
 resources/
+
   images/
+  
   audio/
+  
 The `resources` folder must remain intact for the game to load assets.
