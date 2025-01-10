@@ -42,20 +42,3 @@ A retro-inspired 2D space shooter game built in Java. Players navigate through l
   ```
   java -cp bin mainPacket.MainClass
   ```
-
----
-
-### File Structure:
-Ensure the `resources` folder (for images, audio) is correctly placed:
-
-```
-    mainPacket/
-          GUI/
-    laserGun/
-soundPacket/
-resources/
-  images/
-  audio/
-```
-
-The `resources` folder must remain intact for the game to load assets.
