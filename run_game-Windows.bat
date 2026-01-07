@@ -1,39 +1,37 @@
 @echo off
 REM First-Run Setup Script for The Forbidden Spaceship
-
-REM Navigate to the project directory
 cd %~dp0
 
-REM Check if bin directory exists
-if not exist bin (
-    echo "bin directory not found. Creating and compiling..."
-    mkdir bin
-    REM Compile Java files
-    echo Compiling Java files...
-    javac -d bin -cp TheForbiddenSpaceship-main mainPacket\MainClass.java GUI\*.java spaceshipsPacket\*.java laserGun\*.java soundPacket\*.java
-    if %errorlevel% neq 0 (
-        echo Compilation failed. Please check for errors.
-        exit /b %errorlevel%
-    )
-) else (
-    echo "bin directory already exists. Skipping compilation."
+REM 1. Clean previous builds to ensure a fresh start
+if exist bin (
+    echo Cleaning old build...
+    rd /s /q bin
 )
 
-REM Check if resources are copied
-if not exist bin\images (
-    echo "Resources not found in bin. Copying resources..."
-    xcopy resources\images bin\images /E /I
-    xcopy resources\audio bin\audio /E /I
-) else (
-    echo "Resources already copied. Skipping resource setup."
-)
+mkdir bin
 
-REM Run the game
-echo Running the game...
-java -cp bin mainPacket.MainClass
+REM 2. Compile using the -sourcepath flag
+REM This tells Java where the root of your packages is.
+echo Compiling Java files...
+javac -d bin -sourcepath . mainPacket\MainClass.java
+
 if %errorlevel% neq 0 (
-    echo Failed to run the program. Please check for errors.
+    echo Compilation failed.
+    pause
     exit /b %errorlevel%
 )
+
+REM 3. Copy Resources
+echo Copying resources...
+if exist resources\images (
+    xcopy resources\images bin\images /E /I /Y
+)
+if exist resources\audio (
+    xcopy resources\audio bin\audio /E /I /Y
+)
+
+REM 4. Run the game from the bin directory
+echo Running the game...
+java -cp bin mainPacket.MainClass
 
 pause
