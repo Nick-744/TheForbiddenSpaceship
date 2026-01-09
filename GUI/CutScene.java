@@ -43,6 +43,22 @@ class CutScene extends JPanel {
 		this.setLayout(new BorderLayout());
 		nextButtonPanel = createNextButtonPanel();
 		this.add(nextButtonPanel, BorderLayout.PAGE_END);
+
+		{	// Key listener for interaction - Press ENTER!
+
+			javax.swing.InputMap inputMap   = this.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW);
+			javax.swing.ActionMap actionMap = this.getActionMap();
+
+			inputMap.put(javax.swing.KeyStroke.getKeyStroke("ENTER"), "nextPageAction");
+
+			actionMap.put("nextPageAction", new javax.swing.AbstractAction() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					new SelectedButtonHandler(null).actionPerformed(null);
+				}
+			});
+
+		}
 		
 		return;
 	}

@@ -27,6 +27,22 @@ abstract class promptScreen extends JPanel {
 		sameCodeForCons(str, color);
 		
 		this.add(createReturnButtonPanel(), BorderLayout.SOUTH);
+
+		{	// Key listener for interaction - Press ENTER!
+
+			javax.swing.InputMap inputMap   = this.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW);
+			javax.swing.ActionMap actionMap = this.getActionMap();
+
+			inputMap.put(javax.swing.KeyStroke.getKeyStroke("ENTER"), "returnAction");
+			
+			actionMap.put("returnAction", new javax.swing.AbstractAction() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					setButtonActionPerformed();
+				}
+			});
+
+		}
 		
 		return;
 	}

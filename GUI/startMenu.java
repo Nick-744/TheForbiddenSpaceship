@@ -30,6 +30,22 @@ class startMenu extends promptScreen {
 		super("The Forbidden Spaceship", Color.RED, ADD_BUTTON);
 		
 		setFPSbgImage(100);
+
+		{	// Key listener for interaction - Press ENTER!
+
+			javax.swing.InputMap inputMap   = this.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW);
+			javax.swing.ActionMap actionMap = this.getActionMap();
+
+			inputMap.put(javax.swing.KeyStroke.getKeyStroke("ENTER"), "startGameAction");
+
+			actionMap.put("startGameAction", new javax.swing.AbstractAction() {
+				@Override
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					new SelectedButtonHandler("START").actionPerformed(null);
+				}
+			});
+
+		}
 		
 		return;
 	}
