@@ -4,7 +4,7 @@ A retro-inspired 2D space shooter game built in Java. Players navigate through l
 
 ---
 
-## Screenshots
+### Screenshots
 
 ![Screenshots Collage](screenshots-collage.png)
 
