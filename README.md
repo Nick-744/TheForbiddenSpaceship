@@ -6,10 +6,7 @@ A retro-inspired 2D space shooter game built in Java. Players navigate through l
 
 ## Screenshots
 
-![Screenshot 2026-06-25 030148](images/Screenshot%202026-06-25%20030148.png)
-![Screenshot 2026-06-25 030241](images/Screenshot%202026-06-25%20030241.png)
-![Screenshot 2026-06-25 030607](images/Screenshot%202026-06-25%20030607.png)
-![Screenshot 2026-06-25 030600](images/Screenshot%202026-06-25%20030600.png)
+![Screenshots Collage](screenshots-collage.png)
 
 ---
 
